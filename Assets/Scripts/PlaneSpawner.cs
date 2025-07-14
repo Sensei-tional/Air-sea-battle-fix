@@ -32,6 +32,7 @@ public class PlaneSpawner : MonoBehaviour
         }
     }
 
+    //Plane to be able to be spawn within distance and time parameters.
     void Spawn()
     {
         planeChoice = Random.Range(0,2);
@@ -43,6 +44,7 @@ public class PlaneSpawner : MonoBehaviour
 
     }
 
+    //Spawn Timer to check when the last plane spawned.
     private bool CanSpawn()
     {
         return Time.time >= spawnTime;

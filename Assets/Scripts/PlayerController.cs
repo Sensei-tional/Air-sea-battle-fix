@@ -41,17 +41,20 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    //Allows cannon to rotate to aim at plans
     void MoveCannon()
     {
         rotateInput = Input.GetAxis("Horizontal");
         player.transform.Rotate(rotateInput * Time.deltaTime * rotateSpeed, 0f, 0f);
     }
 
+    //Fires the cannonball from the mouth of the cannon
     void FireCannon()
     {
-        Instantiate(cannonBall, cannonMouth.transform.position, cannonMouth.transform.rotation);     
+        Instantiate(cannonBall, cannonMouth.transform.position, cannonMouth.transform.rotation);
     }
 
+    //Checks if player had fired
     private bool TriggerCannon()
     {
         return Input.GetAxisRaw("Fire1") > 0;
